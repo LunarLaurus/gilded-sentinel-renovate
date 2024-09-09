@@ -21,7 +21,7 @@
 
   "prConcurrentLimit": 0,
   "prHourlyLimit": 0,
-  "prNotPendingHours": 10,
+  "prNotPendingHours": 1,
   "prCreation": "immediate",
   
   "separateMajorMinor": true,

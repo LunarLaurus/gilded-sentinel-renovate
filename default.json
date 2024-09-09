@@ -1,0 +1,66 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base"
+  ],
+  
+  "labels": ["dependencies"],
+  "automerge": true,
+  "stabilityDays": 14,
+
+  "timezone": "Europe/London",
+  "dependencyDashboard": false,
+  "includeForks": false,
+
+  "onboardingBranch": "GS-Renovate-Setup",
+  "onboardingPrTitle": "GS-Renovate (Initial Set-up)",
+  "branchPrefix": "Sentinel-Renovate-",
+  "commitMessagePrefix": "Sentinel-Renovate: ",
+  "commitMessageAction": "Update",
+  "prFooter": "Automatic dependency bump created by Sentinel-Renovate.",
+
+  "prConcurrentLimit": 0,
+  "prHourlyLimit": 0,
+  "prNotPendingHours": 10,
+  "prCreation": "immediate",
+  
+  "separateMajorMinor": true,
+  "separateMultipleMajor": true,
+  "separateMinorPatch": false,
+  "rebaseWhen": "behind-base-branch",
+
+  "assignees": [],
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/target/**",
+    "**/docker/**"
+  ],
+
+  "docker": {
+    "enabled": true
+  },
+
+  "packageRules": [
+    {
+      "groupName": "Maven dependencies",
+      "matchManagers": ["maven"],
+      "matchPackagePatterns": ["*"]
+    },
+    {
+      "groupName": "npm dependencies",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": ["*"]
+    },
+    {
+      "groupName": "NuGet dependencies",
+      "matchManagers": ["nuget"],
+      "matchPackagePatterns": ["*"]
+    },
+    {
+      "groupName": "Docker dependencies",
+      "matchManagers": ["dockerfile"],
+      "matchPackagePatterns": ["*"]
+    }
+  ]
+}

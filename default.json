@@ -5,7 +5,7 @@
   ],
   
   "labels": ["dependencies", "renovate"],
-  "automerge": false, // Disable global automerge
+  "automerge": false,
   "automergeType": "pr",
   "platformAutomerge": true,
   "stabilityDays": 14,

@@ -54,13 +54,13 @@
       "labels": ["Maven", "minor", "patch"]
     },
     {
-      "groupName": "npm Dependencies - Minor/Patch Updates",
+      "groupName": "npm Dependencies - All Updates",
       "matchManagers": ["npm"],
       "matchPackagePatterns": ["*"],
-      "description": "Automerge minor and patch updates for npm dependencies.",
-      "matchUpdateTypes": ["minor", "patch"],
+      "description": "Automerge all updates (major, minor, and patch) for npm dependencies.",
+      "matchUpdateTypes": ["major", "minor", "patch"],
       "automerge": true,
-      "labels": ["npm", "minor", "patch"]
+      "labels": ["npm", "all"]
     },
     {
       "groupName": "NuGet Dependencies - Minor/Patch Updates",
@@ -81,11 +81,12 @@
       "labels": ["Docker", "minor", "patch"]
     },
     {
-      "groupName": "Major Dependency Updates",
+      "groupName": "Major Dependency Update",
       "matchUpdateTypes": ["major"],
-      "description": "Do not automerge major updates. Manual review is required.",
+      "description": "Do not automerge major updates. Manual review is required for all dependencies except npm.",
       "automerge": false,
-      "labels": ["major"]
+      "labels": ["major"],
+      "excludePackagePatterns": ["npm"]
     }
   ]
 }

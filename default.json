@@ -4,8 +4,10 @@
     "config:base"
   ],
   
-  "labels": ["dependencies"],
-  "automerge": true,
+  "labels": ["dependencies", "renovate"],
+  "automerge": false, // Disable global automerge
+  "automergeType": "pr",
+  "platformAutomerge": true,
   "stabilityDays": 14,
 
   "timezone": "Europe/London",
@@ -43,24 +45,47 @@
 
   "packageRules": [
     {
-      "groupName": "Maven dependencies",
+      "groupName": "Maven Dependencies - Minor/Patch Updates",
       "matchManagers": ["maven"],
-      "matchPackagePatterns": ["*"]
+      "matchPackagePatterns": ["*"],
+      "description": "Automerge minor and patch updates for Maven dependencies.",
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "labels": ["Maven", "minor", "patch"]
     },
     {
-      "groupName": "npm dependencies",
+      "groupName": "npm Dependencies - Minor/Patch Updates",
       "matchManagers": ["npm"],
-      "matchPackagePatterns": ["*"]
+      "matchPackagePatterns": ["*"],
+      "description": "Automerge minor and patch updates for npm dependencies.",
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "labels": ["npm", "minor", "patch"]
     },
     {
-      "groupName": "NuGet dependencies",
+      "groupName": "NuGet Dependencies - Minor/Patch Updates",
       "matchManagers": ["nuget"],
-      "matchPackagePatterns": ["*"]
+      "matchPackagePatterns": ["*"],
+      "description": "Automerge minor and patch updates for NuGet dependencies.",
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "labels": ["NuGet", "minor", "patch"]
     },
     {
-      "groupName": "Docker dependencies",
+      "groupName": "Dockerfile Dependencies - Minor/Patch Updates",
       "matchManagers": ["dockerfile"],
-      "matchPackagePatterns": ["*"]
+      "matchPackagePatterns": ["*"],
+      "description": "Automerge minor and patch updates for Dockerfile dependencies.",
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "labels": ["Docker", "minor", "patch"]
+    },
+    {
+      "groupName": "Major Dependency Updates",
+      "matchUpdateTypes": ["major"],
+      "description": "Do not automerge major updates. Manual review is required.",
+      "automerge": false,
+      "labels": ["major"]
     }
   ]
 }

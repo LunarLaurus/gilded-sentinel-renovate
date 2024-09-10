@@ -8,7 +8,7 @@
   "automerge": false,
   "automergeType": "pr",
   "platformAutomerge": true,
-  "stabilityDays": 14,
+  "stabilityDays": 30,
 
   "timezone": "Europe/London",
   "dependencyDashboard": false,
@@ -45,48 +45,103 @@
 
   "packageRules": [
     {
-      "groupName": "Maven Dependencies - Minor/Patch Updates",
+      "groupName": "Patch - Maven",
       "matchManagers": ["maven"],
       "matchPackagePatterns": ["*"],
-      "description": "Automerge minor and patch updates for Maven dependencies.",
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true,
-      "labels": ["Maven", "minor", "patch"]
+      "description": "Automerge patch updates for Maven dependencies.",
+      "matchUpdateTypes": ["patch"],
+      "labels": ["Maven", "patch"]
     },
     {
-      "groupName": "npm Dependencies - All Updates",
+      "groupName": "Minor - Maven",
+      "matchManagers": ["maven"],
+      "matchPackagePatterns": ["*"],
+      "description": "Automerge minor updates for Maven dependencies.",
+      "matchUpdateTypes": ["minor"],
+      "labels": ["Maven", "minor"]
+    },
+    {
+      "groupName": "Major - Maven",
+      "matchManagers": ["maven"],
+      "matchPackagePatterns": ["*"],
+      "description": "Automerge major updates for Maven dependencies.",
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "labels": ["Maven", "major"]
+    },
+    {
+      "groupName": "Patch - npm",
       "matchManagers": ["npm"],
       "matchPackagePatterns": ["*"],
-      "description": "Automerge all updates (major, minor, and patch) for npm dependencies.",
-      "matchUpdateTypes": ["major", "minor", "patch"],
-      "automerge": true,
-      "labels": ["npm", "all"]
+      "description": "Automerge patch updates for npm dependencies.",
+      "matchUpdateTypes": ["patch"],
+      "labels": ["npm", "patch"]
     },
     {
-      "groupName": "NuGet Dependencies - Minor/Patch Updates",
+      "groupName": "Minor - npm",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": ["*"],
+      "description": "Automerge minor updates for npm dependencies.",
+      "matchUpdateTypes": ["minor"],
+      "labels": ["npm", "minor"]
+    },
+    {
+      "groupName": "Major - npm",
+      "matchManagers": ["npm"],
+      "matchPackagePatterns": ["*"],
+      "description": "Automerge major updates for npm dependencies.",
+      "matchUpdateTypes": ["major"],
+      "labels": ["npm", "major"]
+    },
+    {
+      "groupName": "Patch - NuGet",
       "matchManagers": ["nuget"],
       "matchPackagePatterns": ["*"],
-      "description": "Automerge minor and patch updates for NuGet dependencies.",
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true,
-      "labels": ["NuGet", "minor", "patch"]
+      "description": "Automerge patch updates for NuGet dependencies.",
+      "matchUpdateTypes": ["patch"],
+      "labels": ["NuGet", "patch"]
     },
     {
-      "groupName": "Dockerfile Dependencies - Minor/Patch Updates",
+      "groupName": "Minor - NuGet",
+      "matchManagers": ["nuget"],
+      "matchPackagePatterns": ["*"],
+      "description": "Automerge minor updates for NuGet dependencies.",
+      "matchUpdateTypes": ["minor"],
+      "labels": ["NuGet", "minor"]
+    },
+    {
+      "groupName": "Major - NuGet",
+      "matchManagers": ["nuget"],
+      "matchPackagePatterns": ["*"],
+      "description": "Automerge major updates for NuGet dependencies.",
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "labels": ["NuGet", "major"]
+    },
+    {
+      "groupName": "Patch - Dockerfile",
       "matchManagers": ["dockerfile"],
       "matchPackagePatterns": ["*"],
-      "description": "Automerge minor and patch updates for Dockerfile dependencies.",
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true,
-      "labels": ["Docker", "minor", "patch"]
+      "description": "Automerge patch updates for Dockerfile dependencies.",
+      "matchUpdateTypes": ["patch"],
+      "labels": ["Docker", "patch"]
     },
     {
-      "groupName": "Major Dependency Update",
+      "groupName": "Minor - Dockerfile",
+      "matchManagers": ["dockerfile"],
+      "matchPackagePatterns": ["*"],
+      "description": "Automerge minor updates for Dockerfile dependencies.",
+      "matchUpdateTypes": ["minor"],
+      "labels": ["Docker", "minor"]
+    },
+    {
+      "groupName": "Major - Dockerfile",
+      "matchManagers": ["dockerfile"],
+      "matchPackagePatterns": ["*"],
+      "description": "Automerge major updates for Dockerfile dependencies.",
       "matchUpdateTypes": ["major"],
-      "description": "Do not automerge major updates. Manual review is required for all dependencies except npm.",
       "automerge": false,
-      "labels": ["major"],
-      "excludePackagePatterns": ["npm"]
+      "labels": ["Docker", "major"]
     }
   ]
 }

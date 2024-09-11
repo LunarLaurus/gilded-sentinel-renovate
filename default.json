@@ -5,9 +5,9 @@
   ],
   
   "labels": ["dependencies", "renovate"],
-  "automerge": false,
+  "automerge": true,
   "automergeType": "pr",
-  "platformAutomerge": true,
+  "platformAutomerge": false,
   "stabilityDays": 30,
 
   "timezone": "Europe/London",

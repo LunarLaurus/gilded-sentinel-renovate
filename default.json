@@ -142,6 +142,31 @@
       "matchUpdateTypes": ["major"],
       "automerge": false,
       "labels": ["Docker", "major"]
+    },
+    {
+      "groupName": "Patch - Cargo",
+      "matchManagers": ["cargo"],
+      "matchPackagePatterns": ["*"],
+      "description": "Automerge patch updates for Cargo dependencies.",
+      "matchUpdateTypes": ["patch"],
+      "labels": ["Cargo", "patch"]
+    },
+    {
+      "groupName": "Minor - Cargo",
+      "matchManagers": ["cargo"],
+      "matchPackagePatterns": ["*"],
+      "description": "Automerge minor updates for Cargo dependencies.",
+      "matchUpdateTypes": ["minor"],
+      "labels": ["Cargo", "minor"]
+    },
+    {
+      "groupName": "Major - Cargo",
+      "matchManagers": ["cargo"],
+      "matchPackagePatterns": ["*"],
+      "description": "Automerge major updates for Cargo dependencies.",
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "labels": ["Cargo", "major"]
     }
   ]
 }

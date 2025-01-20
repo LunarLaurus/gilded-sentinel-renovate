@@ -33,3 +33,8 @@ This configuration file sets up Renovate to manage dependency updates across var
 - Patch: Automerged with label ["Docker", "patch"].
 - Minor: Automerged with label ["Docker", "minor"].
 - Major: Requires manual review with label ["Docker", "major"].
+
+### Cargo (Rust)
+- Patch: Automerged with label ["Cargo", "patch"].
+- Minor: Automerged with label ["Cargo", "minor"].
+- Major: Requires manual review with label ["Cargo", "major"].

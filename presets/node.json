@@ -1,0 +1,37 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "groupName": "npm patch",
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "minimumReleaseAge": "3 days",
+      "labels": ["npm", "patch"]
+    },
+    {
+      "groupName": "npm minor",
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["minor"],
+      "automerge": true,
+      "minimumReleaseAge": "7 days",
+      "labels": ["npm", "minor"]
+    },
+    {
+      "groupName": "npm major",
+      "matchManagers": ["npm"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "minimumReleaseAge": "14 days",
+      "labels": ["npm", "major"]
+    },
+    {
+      "groupName": "Node.js engine",
+      "matchManagers": ["npm"],
+      "matchDepTypes": ["engines"],
+      "automerge": false,
+      "minimumReleaseAge": "14 days",
+      "labels": ["npm", "engine"]
+    }
+  ]
+}

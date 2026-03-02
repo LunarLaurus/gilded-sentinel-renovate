@@ -1,0 +1,29 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "groupName": "Python patch",
+      "matchManagers": ["pip_requirements", "pyproject", "poetry", "pipenv", "pip-compile"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "minimumReleaseAge": "3 days",
+      "labels": ["Python", "patch"]
+    },
+    {
+      "groupName": "Python minor",
+      "matchManagers": ["pip_requirements", "pyproject", "poetry", "pipenv", "pip-compile"],
+      "matchUpdateTypes": ["minor"],
+      "automerge": true,
+      "minimumReleaseAge": "7 days",
+      "labels": ["Python", "minor"]
+    },
+    {
+      "groupName": "Python major",
+      "matchManagers": ["pip_requirements", "pyproject", "poetry", "pipenv", "pip-compile"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "minimumReleaseAge": "14 days",
+      "labels": ["Python", "major"]
+    }
+  ]
+}

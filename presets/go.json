@@ -1,0 +1,37 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "groupName": "Go modules patch",
+      "matchManagers": ["gomod"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "minimumReleaseAge": "3 days",
+      "labels": ["Go", "patch"]
+    },
+    {
+      "groupName": "Go modules minor",
+      "matchManagers": ["gomod"],
+      "matchUpdateTypes": ["minor"],
+      "automerge": true,
+      "minimumReleaseAge": "7 days",
+      "labels": ["Go", "minor"]
+    },
+    {
+      "groupName": "Go modules major",
+      "matchManagers": ["gomod"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "minimumReleaseAge": "14 days",
+      "labels": ["Go", "major"]
+    },
+    {
+      "groupName": "Go toolchain",
+      "matchManagers": ["gomod"],
+      "matchDepTypes": ["toolchain", "golang"],
+      "automerge": false,
+      "minimumReleaseAge": "14 days",
+      "labels": ["Go", "toolchain"]
+    }
+  ]
+}

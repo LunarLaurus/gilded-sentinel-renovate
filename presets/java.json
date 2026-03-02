@@ -1,0 +1,53 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "groupName": "Maven patch",
+      "matchManagers": ["maven"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "minimumReleaseAge": "3 days",
+      "labels": ["Maven", "patch"]
+    },
+    {
+      "groupName": "Maven minor",
+      "matchManagers": ["maven"],
+      "matchUpdateTypes": ["minor"],
+      "automerge": true,
+      "minimumReleaseAge": "7 days",
+      "labels": ["Maven", "minor"]
+    },
+    {
+      "groupName": "Maven major",
+      "matchManagers": ["maven"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "minimumReleaseAge": "14 days",
+      "labels": ["Maven", "major"]
+    },
+    {
+      "groupName": "Gradle patch",
+      "matchManagers": ["gradle", "gradle-wrapper"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "minimumReleaseAge": "3 days",
+      "labels": ["Gradle", "patch"]
+    },
+    {
+      "groupName": "Gradle minor",
+      "matchManagers": ["gradle", "gradle-wrapper"],
+      "matchUpdateTypes": ["minor"],
+      "automerge": true,
+      "minimumReleaseAge": "7 days",
+      "labels": ["Gradle", "minor"]
+    },
+    {
+      "groupName": "Gradle major",
+      "matchManagers": ["gradle", "gradle-wrapper"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "minimumReleaseAge": "14 days",
+      "labels": ["Gradle", "major"]
+    }
+  ]
+}

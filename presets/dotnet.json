@@ -1,0 +1,29 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "groupName": "NuGet patch",
+      "matchManagers": ["nuget"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "minimumReleaseAge": "3 days",
+      "labels": ["NuGet", "patch"]
+    },
+    {
+      "groupName": "NuGet minor",
+      "matchManagers": ["nuget"],
+      "matchUpdateTypes": ["minor"],
+      "automerge": true,
+      "minimumReleaseAge": "7 days",
+      "labels": ["NuGet", "minor"]
+    },
+    {
+      "groupName": "NuGet major",
+      "matchManagers": ["nuget"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "minimumReleaseAge": "14 days",
+      "labels": ["NuGet", "major"]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "docker": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "groupName": "Docker patch",
+      "matchManagers": ["dockerfile", "docker-compose"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "minimumReleaseAge": "3 days",
+      "labels": ["Docker", "patch"]
+    },
+    {
+      "groupName": "Docker minor",
+      "matchManagers": ["dockerfile", "docker-compose"],
+      "matchUpdateTypes": ["minor"],
+      "automerge": true,
+      "minimumReleaseAge": "7 days",
+      "labels": ["Docker", "minor"]
+    },
+    {
+      "groupName": "Docker major",
+      "matchManagers": ["dockerfile", "docker-compose"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "minimumReleaseAge": "14 days",
+      "labels": ["Docker", "major"]
+    }
+  ]
+}

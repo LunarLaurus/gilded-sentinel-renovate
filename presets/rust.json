@@ -1,0 +1,38 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
+    {
+      "groupName": "Cargo patch",
+      "matchManagers": ["cargo"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "minimumReleaseAge": "3 days",
+      "labels": ["Cargo", "patch"]
+    },
+    {
+      "groupName": "Cargo minor",
+      "matchManagers": ["cargo"],
+      "matchUpdateTypes": ["minor"],
+      "automerge": true,
+      "minimumReleaseAge": "7 days",
+      "labels": ["Cargo", "minor"]
+    },
+    {
+      "groupName": "Cargo major",
+      "matchManagers": ["cargo"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false,
+      "minimumReleaseAge": "14 days",
+      "labels": ["Cargo", "major"]
+    },
+    {
+      "groupName": "Rust toolchain",
+      "matchManagers": ["cargo"],
+      "matchDepNames": ["rust"],
+      "matchDepTypes": ["toolchain"],
+      "automerge": false,
+      "minimumReleaseAge": "14 days",
+      "labels": ["Cargo", "toolchain"]
+    }
+  ]
+}

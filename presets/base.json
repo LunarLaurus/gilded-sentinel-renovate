@@ -1,0 +1,44 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
+  "labels": ["dependencies", "renovate"],
+  "timezone": "Europe/London",
+
+  "dependencyDashboard": true,
+  "dependencyDashboardTitle": "Gilded Sentinel — Threat Assessment Dashboard",
+  "dependencyDashboardHeader": "Active dependency exposure is tracked below. All items represent potential supply chain risk requiring neutralisation.",
+
+  "includeForks": false,
+
+  "onboardingBranch": "Gilded-Sentinel/onboarding",
+  "onboardingPrTitle": "Gilded Sentinel — Fleet Onboarding (Initial Security Baseline)",
+  "onboardingCommitMessage": "Gilded-Sentinel: Establish dependency security baseline",
+
+  "branchPrefix": "Gilded-Sentinel/",
+  "commitMessagePrefix": "Gilded-Sentinel:",
+  "commitMessageAction": "Neutralise",
+  "prFooter": "Security dispatch raised by **Gilded Sentinel** — Fleet Dependency Guardian.\n_Supply chain integrity is non-negotiable._",
+
+  "prConcurrentLimit": 15,
+  "prHourlyLimit": 4,
+  "prNotPendingHours": 1,
+  "prCreation": "immediate",
+
+  "automerge": true,
+  "automergeType": "pr",
+  "platformAutomerge": false,
+
+  "separateMajorMinor": true,
+  "separateMultipleMajor": true,
+  "separateMinorPatch": false,
+  "rebaseWhen": "behind-base-branch",
+
+  "ignorePaths": [
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/target/**",
+    "**/vendor/**",
+    "**/.venv/**",
+    "**/docker/**"
+  ]
+}
